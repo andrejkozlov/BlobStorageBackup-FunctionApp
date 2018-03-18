@@ -17,6 +17,7 @@ private static void CopyBlob(CloudBlockBlob myBlob, TraceWriter log)
     // Create the destination blob client
     CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
     CloudBlobContainer container = blobClient.GetContainerReference("backup");
+
     // Create the container if it doesn't already exist.
     try
     {
@@ -36,7 +37,6 @@ private static void CopyBlob(CloudBlockBlob myBlob, TraceWriter log)
         destinationBlob.StartCopy(myBlob);
 
         log.Info("Copy completed");
-
     }
     catch(Exception ex){
         log.Error(ex.Message);
