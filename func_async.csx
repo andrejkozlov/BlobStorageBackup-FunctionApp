@@ -1,3 +1,5 @@
+#r "Microsoft.WindowsAzure.Storage"
+
 using System;
 using System.IO;
 using Microsoft.Azure;
@@ -28,13 +30,24 @@ private async static Task CopyBlob(CloudBlockBlob myBlob, TraceWriter log)
         log.Error(e.Message);
     }
 
+    //Get SAS token
+    SharedAccessBlobPolicy sasConstraints = new SharedAccessBlobPolicy();
+    sasConstraints.SharedAccessStartTime = DateTimeOffset.UtcNow.AddHours(-24);
+    sasConstraints.SharedAccessExpiryTime = DateTimeOffset.UtcNow.AddHours(24);
+    sasConstraints.Permissions = SharedAccessBlobPermissions.Read | SharedAccessBlobPermissions.List;
+
+    //Generate the shared access signature on the blob, setting the constraints directly on the signature.
+    string sasBlobToken = myBlob.GetSharedAccessSignature(sasConstraints);
+
+    log.Info(myBlob.Uri + sasBlobToken);
+
     // Get hold of the destination blob
     CloudBlockBlob destinationBlob = container.GetBlockBlobReference(myBlob.Name);
     log.Info($"BlockBlob destination name: {destinationBlob.Name}");
 
     log.Info("Starting Copy");
     try{
-        await destinationBlob.StartCopyAsync(myBlob);
+        await destinationBlob.StartCopyAsync(new System.Uri(myBlob.Uri + sasBlobToken));
 
         while (destinationBlob.CopyState.Status == CopyStatus.Pending)
         {
