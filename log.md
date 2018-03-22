@@ -59,7 +59,7 @@
 2018-03-22T10:12:16.005 [Info] Function completed (Success, Id=aa7a5947-cc63-4974-a54f-849b48f7ac72, Duration=12ms)
 2018-03-22T10:12:16.036 [Info] Starting Copy
 2018-03-22T10:14:23.311 [Info] Copy completed
-2018-03-22T10:14:23.311 [Info] Elapsed time: 127305
+2018-03-22T10:14:23.311 [Info] Elapsed time: 127305 ms
 ```
 
 ### Run4
@@ -79,7 +79,7 @@
 2018-03-22T10:32:49.643 [Info] Function completed (Success, Id=b4de81fc-9a82-470c-a562-d80683608508, Duration=10ms)
 2018-03-22T10:32:49.671 [Info] Starting Copy
 2018-03-22T10:34:54.339 [Info] Copy completed
-2018-03-22T10:34:54.339 [Info] Elapsed time: 124703
+2018-03-22T10:34:54.339 [Info] Elapsed time: 124703 ms
 ```
 
 ## 1 GB File & Sync
