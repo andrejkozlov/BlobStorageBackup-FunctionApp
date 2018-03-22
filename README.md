@@ -44,4 +44,4 @@ Please see the [log](log.md) for detailed results.
 | 2              | 00:20:09      |
 
 
-\* Time between first file upload to origin container and last file backup to target container.
+\* Time between first file copied to target backup container and last file copied to target container.
