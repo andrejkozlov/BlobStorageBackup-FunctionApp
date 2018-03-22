@@ -4,7 +4,7 @@
 
 ### Run1
 
-
+```
 2018-03-22 09:21:25.744 INFO - blobxfer start time: 2018-03-22 09:21:25.744518+00:00
 2018-03-22 09:21:25.744 DEBUG - spawning 4 disk threads
 2018-03-22 09:21:25.761 DEBUG - spawning 8 transfer threads
@@ -12,15 +12,15 @@
 2018-03-22 09:21:26.311 DEBUG - 1 local/remote files processed, waiting for upload completion of approx. 1024.0000 MiB
 2018-03-22 09:21:45.440 INFO - elapsed upload + verify time and throughput of 1.0000 GiB: 19.129 sec, 428.2516 Mbps (53.531 MiB/s)
 2018-03-22 09:21:45.440 INFO - blobxfer end time: 2018-03-22 09:21:45.440592+00:00 (elapsed: 19.696 sec)
+```
 
-
-
+```
 2018-03-22T09:21:55.123 [Info] Function started (Id=f1fe8b41-e29e-43e8-99cd-bcd4867d5806)
 2018-03-22T09:21:55.717 [Info] Function completed (Success, Id=f1fe8b41-e29e-43e8-99cd-bcd4867d5806, Duration=596ms)
 2018-03-22T09:21:55.748 [Info] Starting Copy
 2018-03-22T09:24:35.159 [Info] Copy completed
 2018-03-22T09:24:35.159 [Info] Elapsed time: 159475 ms
-
+```
 
 ### Run2
 
