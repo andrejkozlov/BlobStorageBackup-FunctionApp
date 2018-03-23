@@ -1,6 +1,17 @@
-# Blob Storage Backup using Function Apps
+# Blob Storage Backup using Azure Functions
 
-Demo project and benchmark of different approaches to backup blobs to another Blob Storage based on Function Apps trigger.
+Demo project and benchmark of different approaches to backup blobs to another [Blob Storage](https://azure.microsoft.com/en-us/services/storage/blobs/) based on [Azure Function App](https://docs.microsoft.com/en-us/azure/azure-functions/) trigger.
+
+## Description
+
+When new object is added to initial container Function App triggers function which copies the object to container in another storage account.
+
+There are two approches [Asynchronous approach](func_async.csx) and [Synchronous approach](func.csx)
+
+How it works:
+* Funtion app monitors container in the 1st storage account for new objects
+* When new object is added to container in the 1st storage account Function app code is triggered
+* Object is copied to target container in 2nd storage account
 
 ## Benchmark
 
